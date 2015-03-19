@@ -1,0 +1,55 @@
+<head>
+<title>Netball</title>  
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">     
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><span style="color:black">
+          <button class="refresh1" style="font-size: 0.9em;">Hummers</button>&nbsp;
+          <button class="refresh2" style="font-size: 0.9em;">Legends</button>&nbsp;<span style="font-size: 0.8em;">(beta 0.3)</span>
+          </span></a>
+        </div>
+      </div><!-- container-fluid -->
+    </div><!-- navbar -->
+  </div><!-- container -->
+<div class="container">  
+<center><h1>{{TeamName}}</h1>
+<img src='{{BusySymbol}}'></center>
+<!-- Heatmap here perhaps?
+<span style="max-width: 95%; font-size: 1px; font-family: monospace">
+{{#each stocks}}{{> heatmap}}
+{{/each}}
+<br>
+</span>
+<br>
+-->
+<table class="table table-striped" style="background-image: linear-gradient(to bottom, gold, white 90%)">
+<thead><tr><th><span class="glyphicon glyphicon-calendar"></span></th><th style="text-align:right"><span class="glyphicon glyphicon-time"></span></th>
+<th style="text-align:center">Court/Result</th><th><!--<span class="glyphicon glyphicon-cutlery"></span>--></th></tr></thead>
+  <tbody>
+{{#each netball}}
+{{> games}}
+{{/each}}
+  </tbody>
+</table>
+<div class="footer"><p></p><center>
+<a href="#" class="refresh" style="text-decoration:none; color: grey"><span style="font-size: 0.8em;">This App is &copy; Copyright MMXV Jon Brown</span></a>
+</center>
+</div> <!-- footer -->
+</div>
+</body>
+
+<template name="games">
+  <tr>
+  <td>{{gameDay}}</td><td align="right"><span class="{{tgameHome}}"></span>{{tgameTime}}</td><td style="text-align:center;color: {{tResultColour}}">{{tCourt_or_Result}}</td><td>{{tTeam}}</td>
+  </tr>
+</template>
+
+<template name="heatmap">
+<a href="#" class="xtooltip" id="{{getHeatColourStyle chgPC}}">&nbsp;{{score}}&nbsp;<span><img class="xcallout"/><strong><center>{{last}}</center></strong><center>{{chgPC}}%</center></span></a>
+</template>

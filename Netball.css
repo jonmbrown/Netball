@@ -1,0 +1,26 @@
+/* CSS declarations go here */
+
+body {
+  font-size: 15px;
+}
+
+.table-striped { /* Slightly smaller than the default */
+  width: 98%;
+}
+
+.navbar-inverse {
+  background-image: linear-gradient(to bottom, gold, yellow 100%);
+}
+
+button {
+  /* background-image: linear-gradient(to right, grey, white 100%);*/
+}
+
+h1 {
+  font-size: 1.3em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
+
